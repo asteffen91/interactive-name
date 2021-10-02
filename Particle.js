@@ -27,8 +27,8 @@ class Particle {
         this.pos.add(this.vel);
     }
 
-    update() {
-        let mousePos = createVector(mouseX, mouseY);
+    update(moX, moY) {
+        let mousePos = createVector(moX, moY);
 
         let force1 = new p5.Vector(0, 0);
         if (p5.Vector.dist(this.pos, mousePos) < 200) {

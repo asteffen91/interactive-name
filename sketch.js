@@ -16,6 +16,6 @@ function draw() {
   }
 
   for (let j = 0; j < p.length; j++) {
-    p[j].update();
+    p[j].update(mouseX, mouseY);
   }
 }

@@ -1,5 +1,8 @@
 let p = [];
-const N = 1000;
+
+let text = ' Austin ';
+let fontSize = 400;
+
 let points;
 let bounds;
 
@@ -12,8 +15,8 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  bounds = font.textBounds(' Austin ', 0, 0, 400);
-  points = font.textToPoints(' Austin ', 0, 0, 400, {
+  bounds = font.textBounds(text, 0, 0, fontSize);
+  points = font.textToPoints(text, 0, 0, fontSize, {
     sampleFactor: 0.1,
     simplifyThreshold: 0
   });

@@ -32,7 +32,7 @@ class Particle {
 
         let force1 = new p5.Vector(0, 0);
         if (p5.Vector.dist(this.pos, mousePos) < 200) {
-            let d = constrain(p5.Vector.dist(this.pos, mousePos), 1, 10000);
+            let d = constrain(p5.Vector.dist(this.pos, mousePos), 10, 10000);
             force1 = p5.Vector.sub(this.pos, mousePos).normalize().div(d).mult(100.0);
         }
 
@@ -40,6 +40,9 @@ class Particle {
         let force3 = p5.Vector.mult(this.vel, -0.1);
         let force = p5.Vector.add(force1, force2);
         force = force.add(force3);
+
+        this.r = constrain(0.0005 * (p5.Vector.dist(this.desire, this.pos)) ** 2 + 10, 10, 30);
+
         this.applyForce(force.x, force.y);
         this.draw();
     }
